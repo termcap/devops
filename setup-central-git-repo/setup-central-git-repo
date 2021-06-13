@@ -1,1 +1,14 @@
-blah
+
+1. Initialize a bare repository in a directory (repo)
+git init --bare --shared cicd.git
+
+2. create a common group (devops) and add all people(termcap,user1,user2) who will be pushing into it
+chgrp -R devops
+
+3. login as the user (termcap) and clone the repo
+git clone ssh://localhost/repo/cicd
+
+4. When pushing simply push as
+git push origin master (you will be asked for password of termcap)
+
+Notes: use certs to avoid entering passwords each time
